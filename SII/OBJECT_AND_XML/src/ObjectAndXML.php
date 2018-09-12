@@ -19,6 +19,19 @@ class ObjectAndXML {
         $this->xml->setIndentString("");
     }
 
+    function buildSign($toSign, $privkey) {
+
+        $signature = null;
+        $priv_key = $privkey;
+        $pkeyid = openssl_get_privatekey($priv_key);
+
+        openssl_sign($toSign, $signature, $priv_key, OPENSSL_ALGO_SHA1);
+        openssl_free_key($pkeyid);
+        $base64 = base64_encode($signature);
+        return $base64;
+
+    }
+
     public function setUri($uri){
         $this->uri = $uri;
     }

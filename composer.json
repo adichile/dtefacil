@@ -16,10 +16,10 @@
     },
     "autoload": {
         "psr-4": {
-            "ADICHILE\\DTEFACIL\\SII\\BOLETAS\\DTE\\": "DTEFACIL/SII/BOLETAS/DTE/src",
-            "ADICHILE\\DTEFACIL\\SII\\BOLETAS\\REPORTE_CONSUMO_FOLIOS\\": "DTEFACIL/SII/BOLETAS/REPORTE_CONSUMO_FOLIOS/src",
-            "ADICHILE\\DTEFACIL\\SII\\OBJECT_AND_XML\\": "DTEFACIL/SII/OBJECT_AND_XML/src",
-            "FR3D\\XmlDSig\\Adapter\\": "DTEFACIL/xmlseclibs"
+            "ADICHILE\\DTEFACIL\\SII\\BOLETAS\\DTE\\": "SII/BOLETAS/DTE/src",
+            "ADICHILE\\DTEFACIL\\SII\\BOLETAS\\REPORTE_CONSUMO_FOLIOS\\": "SII/BOLETAS/REPORTE_CONSUMO_FOLIOS/src",
+            "ADICHILE\\DTEFACIL\\SII\\OBJECT_AND_XML\\": "SII/OBJECT_AND_XML/src",
+            "FR3D\\XmlDSig\\Adapter\\": "xmlseclibs"
         }
     }
 }

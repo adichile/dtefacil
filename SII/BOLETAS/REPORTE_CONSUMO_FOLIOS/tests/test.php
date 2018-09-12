@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '../../../../../../vendor/autoload.php'; // Autoload files using Composer autoload
+require_once __DIR__ . '../../../../../vendor/autoload.php'; // Autoload files using Composer autoload
 
 try{
 
@@ -67,7 +67,7 @@ try{
     $SecEnvio = "1";
     $dcf_id = "RCF_R$pRutEmpresa" . "_F$fecha". "_SEC$SecEnvio";
 
-    $path = __DIR__ . "test.php/" . $dcf_id . ".xml";
+    $path = __DIR__ . "/" . $dcf_id . ".xml";
 
     $obj = new \ADICHILE\DTEFACIL\SII\OBJECT_AND_XML\ObjectAndXML($path);
 
@@ -82,13 +82,13 @@ try{
     $CONSUMO_DE_FOLIOS->encoding = "ISO-8859-1";
     $key = array();
     $xmlTool = new \FR3D\XmlDSig\Adapter\XmlseclibsAdapter();
-    $pfx = file_get_contents(__DIR__ . "/Certif2017.pfx");
-    openssl_pkcs12_read($pfx, $key, "cert4477");
+    $pfx = file_get_contents(__DIR__ . "/certificado.pfx o .p12");
+    openssl_pkcs12_read($pfx, $key, "passwordcertificado");
     $xmlTool->setPrivateKey($key["pkey"]);
     $xmlTool->setpublickey($key["cert"]);
-    $xmlTool->addTransform(FR3D\XmlDSig\Adapter\XmlseclibsAdapter::ENVELOPED);
+    $xmlTool->addTransform(\FR3D\XmlDSig\Adapter\XmlseclibsAdapter::ENVELOPED);
     $xmlTool->sign($CONSUMO_DE_FOLIOS, "RCF");
-    $archivo =  __DIR__ . "test.php/" . $obj->getId() . ".xml";
+    $archivo =  __DIR__ . "/" . $obj->getId() . ".xml";
     $CONSUMO_DE_FOLIOS->save($archivo);
 
 }  catch (Exception $exc){

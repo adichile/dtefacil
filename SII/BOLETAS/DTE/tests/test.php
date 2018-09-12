@@ -1,55 +1,5 @@
 <?php
-require_once __DIR__ . '../../../../../../vendor/autoload.php'; // Autoload files using Composer autoload
-
-
-function utf8_encode_deep(&$input) {
-    if (is_string($input)) {
-        $input = utf8_encode($input);
-    } else if (is_array($input)) {
-        foreach ($input as &$value) {
-            utf8_encode_deep($value);
-        }
-
-        unset($value);
-    } else if (is_object($input)) {
-        $vars = array_keys(get_object_vars($input));
-
-        foreach ($vars as $var) {
-            utf8_encode_deep($input->$var);
-        }
-    }
-}
-
-function utf8_decode_deep(&$input) {
-    if (is_string($input)) {
-        $input = utf8_decode($input);
-    } else if (is_array($input)) {
-        foreach ($input as &$value) {
-            utf8_decode_deep($value);
-        }
-
-        unset($value);
-    } else if (is_object($input)) {
-        $vars = array_keys(get_object_vars($input));
-
-        foreach ($vars as $var) {
-            utf8_decode_deep($input->$var);
-        }
-    }
-}
-
-function buildSign($toSign, $privkey) {
-
-    $signature = null;
-    $priv_key = $privkey;
-    $pkeyid = openssl_get_privatekey($priv_key);
-
-    openssl_sign($toSign, $signature, $priv_key, OPENSSL_ALGO_SHA1);
-    openssl_free_key($pkeyid);
-    $base64 = base64_encode($signature);
-    return $base64;
-
-}
+require_once __DIR__ . '../../../../../vendor/autoload.php'; // Autoload files using Composer autoload
 
 try{
 
@@ -75,6 +25,7 @@ try{
 
     $Documento->getEncabezado()->setReceptor();
     $Documento->getEncabezado()->getReceptor()->setRUTRecep("66666666-6");
+    $Documento->getEncabezado()->getReceptor()->setRznSocRecep("CLIENTE OCACION");
 
     $Documento->getEncabezado()->setTotales();
     $Documento->getEncabezado()->getTotales()->setMntTotal("20000");
@@ -128,13 +79,13 @@ try{
     $Documento->setTmstFirma($fechaTimbre);
     $Documento->setTED();
     $Documento->TED->setDD();
-    $Documento->TED->DD->setRE($Documento->Encabezado->Emisor->getRUTEmisor());
-    $Documento->TED->DD->setTD($Documento->Encabezado->IdDoc->getTipoDTE());
-    $Documento->TED->DD->setF($Documento->Encabezado->IdDoc->getFolio());
-    $Documento->TED->DD->setFE($Documento->Encabezado->IdDoc->getFchEmis());
-    $Documento->TED->DD->setRR($Documento->Encabezado->Receptor->getRUTRecep());
-    $Documento->TED->DD->setRSR(mb_substr($model->RznSocRecep, 0, 40));
-    $Documento->TED->DD->setMNT($Documento->Encabezado->Totales->getMntTotal());
+    $Documento->TED->DD->setRE($Documento->getEncabezado()->getEmisor()->getRUTEmisor());
+    $Documento->TED->DD->setTD($Documento->getEncabezado()->getIdDoc()->getTipoDTE());
+    $Documento->TED->DD->setF($Documento->getEncabezado()->getIdDoc()->getFolio());
+    $Documento->TED->DD->setFE($Documento->getEncabezado()->getIdDoc()->getFchEmis());
+    $Documento->TED->DD->setRR($Documento->getEncabezado()->getReceptor()->getRUTRecep());
+    $Documento->TED->DD->setRSR(mb_substr($Documento->getEncabezado()->getReceptor()->getRznSocRecep(), 0, 40));
+    $Documento->TED->DD->setMNT($Documento->getEncabezado()->getTotales()->getMntTotal());
     $Documento->TED->DD->setIT1(mb_substr($Documento->Detalle[0]->getNmbItem(),0,40));
     $Documento->TED->DD->setTSTED($fechaTimbre);
     //utf8_encode_deep($DTE);
@@ -196,7 +147,7 @@ try{
         "</RR><RSR>" . utf8_decode($RSR) . "</RSR><MNT>" . $MONTO . "</MNT><IT1>" . $IT1 ."</IT1>$CAF<TSTED>".
         $fechaTimbre ."</TSTED></DD>";
 
-    $FRMT = buildSign($DD2, $priv_key);
+    $FRMT = $obj->buildSign($DD2, $priv_key);
     $fragment = $DTE_TIMBRE->createDocumentFragment();
     $fragment->appendXML("<FRMT algoritmo=\"SHA1withRSA\">$FRMT</FRMT>\n");
     $TED = $DTE_TIMBRE->getElementsByTagName("TED")->item(0);
@@ -204,12 +155,12 @@ try{
 
 
     $xmlTool = new \FR3D\XmlDSig\Adapter\XmlseclibsAdapter();
-    $pfx = file_get_contents(__DIR__ . "/Certif2017.pfx");
+    $pfx = file_get_contents(__DIR__ . "/certificado.pfx o p12");
     $key = array();
-    openssl_pkcs12_read($pfx, $key, "cert4477");
+    openssl_pkcs12_read($pfx, $key, "password certificado");
     $xmlTool->setPrivateKey($key["pkey"]);
     $xmlTool->setpublickey($key["cert"]);
-    $xmlTool->addTransform(FR3D\XmlDSig\Adapter\XmlseclibsAdapter::ENVELOPED);
+    $xmlTool->addTransform(\FR3D\XmlDSig\Adapter\XmlseclibsAdapter::ENVELOPED);
     $xmlTool->sign($DTE_TIMBRE, "DTE");
 
     $DTE_TIMBRE->save($path);

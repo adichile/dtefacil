@@ -2,7 +2,7 @@
     "name": "adichile/dtefacil",
     "description": "Libreria php relacionada a factura electronica chile",
     "type": "library",
-    "license": "YUMMY",
+    "license": "AGPL-3.0+",
     "authors": [
         {
             "name": "ADICHILE SpA",

@@ -8,12 +8,9 @@ class ObjectAndXML {
     private $tipo;
 
     // Constructor
-    public function __construct($path) {
+    public function __construct() {
         $this->xml = new \XmlWriter();
         $this->xml->openMemory();
-        touch($path);
-        $uri = realpath($path);
-        $this->xml->openURI("$uri");
         $this->xml->startDocument('1.0', 'ISO-8859-1');
         $this->xml->setIndent(TRUE);
         $this->xml->setIndentString("");
@@ -52,7 +49,7 @@ class ObjectAndXML {
         unlink($this->uri);
     }
 
-    public function setStartElement($startElement = "", $tipo = ""){
+    public function setStartElement($tipo = null){
         /*
         1 = DTE
         2 = BOLETA
@@ -66,12 +63,12 @@ class ObjectAndXML {
 
         if($tipo == 1 || $tipo == 2){
 
-            $this->xml->startElement($startElement);
+            $this->xml->startElement("DTE");
             $this->xml->writeAttribute("version", "1.0");
 
         }elseif($tipo == 3){
 
-            $this->xml->startElement($startElement);
+            $this->xml->startElement("LibroBoleta");
             $this->xml->writeAttribute("xmlns", "http://www.sii.cl/SiiDte");
             $this->xml->writeAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
             $this->xml->writeAttribute("version", "1.0");
@@ -79,7 +76,7 @@ class ObjectAndXML {
 
         }elseif($tipo == 4){
 
-            $this->xml->startElement($startElement);
+            $this->xml->startElement("LibroCompraVenta");
             $this->xml->writeAttribute("xmlns", "http://www.sii.cl/SiiDte");
             $this->xml->writeAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
             $this->xml->writeAttribute("version", "1.0");
@@ -87,7 +84,7 @@ class ObjectAndXML {
 
         }elseif($tipo == 5){
 
-            $this->xml->startElement($startElement);
+            $this->xml->startElement("LibroGuia");
             $this->xml->writeAttribute("xmlns", "http://www.sii.cl/SiiDte");
             $this->xml->writeAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
             $this->xml->writeAttribute("version", "1.0");
@@ -95,7 +92,7 @@ class ObjectAndXML {
 
         }elseif($tipo == 6){
 
-            $this->xml->startElement($startElement);
+            $this->xml->startElement("ConsumoFolios");
             $this->xml->writeAttribute("xmlns", "http://www.sii.cl/SiiDte");
             $this->xml->writeAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
             $this->xml->writeAttribute("version", "1.0");
@@ -135,20 +132,16 @@ class ObjectAndXML {
                     $xml->writeAttribute("ID", $this->id);
                 }
 
+                if($key == "DocumentoConsumoFolios"){
+                    $xml->writeAttribute("ID", $this->id);
+                }
 
                 if($this->tipo == 6){
-
-                    if($key == "DocumentoConsumoFolios"){
-                        $xml->writeAttribute("ID", $this->id);
-                    }
 
                     if($key == "Caratula"){
                         $xml->writeAttribute("version", "1.0");
                     }
                 }
-
-
-
 
                 $this->getObject2XML($xml, $value);
                 $xml->endElement();

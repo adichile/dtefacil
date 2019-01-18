@@ -41,8 +41,8 @@ try{
 
     $path = __DIR__ . "/archivos/" .$IDDTE . ".xml";
 
-    $obj = new \ADICHILE\DTEFACIL\SII\OBJECT_AND_XML\ObjectAndXML($path);
-    $obj->setStartElement("DTE", 2);
+    $obj = new \ADICHILE\DTEFACIL\SII\OBJECT_AND_XML\ObjectAndXML();
+    $obj->setStartElement( 2);
     $obj->setId($IDDTE);
 
 

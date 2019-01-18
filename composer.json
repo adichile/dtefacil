@@ -12,13 +12,23 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.3.0",
+        "ext-xmlwriter": "*",
+        "ext-openssl": "*",
+        "ext-simplexml": "*",
+        "ext-mbstring": "*",
+        "ext-dom": "*"
     },
     "autoload": {
         "psr-4": {
             "ADICHILE\\DTEFACIL\\SII\\BOLETAS\\DTE\\": "SII/BOLETAS/DTE/src",
             "ADICHILE\\DTEFACIL\\SII\\BOLETAS\\REPORTE_CONSUMO_FOLIOS\\": "SII/BOLETAS/REPORTE_CONSUMO_FOLIOS/src",
             "ADICHILE\\DTEFACIL\\SII\\OBJECT_AND_XML\\": "SII/OBJECT_AND_XML/src",
+            "ADICHILE\\DTEFACIL\\SII\\DTE\\": "SII/DTE/src",
+            "ADICHILE\\DTEFACIL\\SII\\LIBRO\\VENTA\\": "SII/LIBRO/VENTA/src",
+            "ADICHILE\\DTEFACIL\\SII\\LIBRO\\COMPRA\\": "SII/LIBRO/COMPRA/src",
+            "ADICHILE\\DTEFACIL\\SII\\LIBRO\\GUIA\\": "SII/LIBRO/GUIA/src",
+
             "FR3D\\XmlDSig\\Adapter\\": "xmlseclibs"
         }
     }

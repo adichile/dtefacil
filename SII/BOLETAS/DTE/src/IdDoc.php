@@ -1,14 +1,14 @@
 <?php
 namespace ADICHILE\DTEFACIL\SII\BOLETAS\DTE;
 class IdDoc{
-    public $TipoDTE;
-    public $Folio;
-    public $FchEmis;
-    public $IndServicio;
-    public $IndMntNeto;
-    public $PeriodoDesde;
-    public $PeriodoHasta;
-    public $FchVenc;
+    private $TipoDTE;
+    private $Folio;
+    private $FchEmis;
+    private $IndServicio;
+    private $IndMntNeto;
+    private $PeriodoDesde;
+    private $PeriodoHasta;
+    private $FchVenc;
     
     function getTipoDTE() {
         return $this->TipoDTE;

@@ -28,7 +28,6 @@
             "ADICHILE\\DTEFACIL\\SII\\LIBRO\\VENTA\\": "SII/LIBRO/VENTA/src",
             "ADICHILE\\DTEFACIL\\SII\\LIBRO\\COMPRA\\": "SII/LIBRO/COMPRA/src",
             "ADICHILE\\DTEFACIL\\SII\\LIBRO\\GUIA\\": "SII/LIBRO/GUIA/src",
-
             "FR3D\\XmlDSig\\Adapter\\": "xmlseclibs"
         }
     }

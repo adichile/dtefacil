@@ -93,7 +93,7 @@ class Receptor{
     }
     
     function setExtranjero(){
-        $this->Extranjero = new \DTE_SERIALIZACION\Extranjero();
+        $this->Extranjero = new Extranjero();
     }
 
     function setIdAdicRecep($IdAdicRecep) {

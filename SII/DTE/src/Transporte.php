@@ -51,7 +51,7 @@ class Transporte{
     }
 
     function setChofer() {
-        $this->Chofer = new \DTE_SERIALIZACION\Chofer;
+        $this->Chofer = new Chofer();
     }
 
     function setDirDest($DirDest) {
@@ -67,7 +67,7 @@ class Transporte{
     }
 
     function setAduana(){
-        $this->Aduana = new \DTE_SERIALIZACION\Aduana;
+        $this->Aduana = new Aduana();
     }
 
 }

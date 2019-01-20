@@ -155,7 +155,7 @@ class Totales{
     }
     
     function setComisiones() {
-        $this->Comisiones = new \DTE_SERIALIZACION\Comisiones();
+        $this->Comisiones = new Comisiones();
     }
 
     function setMntTotal($MntTotal) {

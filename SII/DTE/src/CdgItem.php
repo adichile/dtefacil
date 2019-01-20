@@ -1,7 +1,6 @@
 <?php
 namespace ADICHILE\DTEFACIL\SII\DTE;
 
-namespace DTE_SERIALIZACION;
 class CdgItem{
     public $TpoCodigo;
     public $VlrCodigo;

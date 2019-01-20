@@ -1,7 +1,6 @@
 <?php
 namespace ADICHILE\DTEFACIL\SII\DTE;
 
-require_once('DD.php');
 /** 
  * @property DD $DD
 */
@@ -13,7 +12,7 @@ class TED{
     }
 
     function setDD() {
-        $this->DD = new \DTE_SERIALIZACION\DD();
+        $this->DD = new DD();
     }
 
 }

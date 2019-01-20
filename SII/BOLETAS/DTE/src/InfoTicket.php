@@ -1,5 +1,6 @@
 <?php
 namespace ADICHILE\DTEFACIL\SII\BOLETAS\DTE;
+
 class InfoTicket{
     private $FolioTicket;
     private $FchGenera;

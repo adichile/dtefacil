@@ -1,6 +1,5 @@
 <?php
 namespace ADICHILE\DTEFACIL\SII\BOLETAS\DTE;
-require_once('DD.php');
 /** 
  * @property DD $DD
 */

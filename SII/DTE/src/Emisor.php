@@ -142,7 +142,7 @@ class Emisor{
     }
 
     function setGuiaExport() {
-        $this->GuiaExport =  new \DTE_SERIALIZACION\GuiaExport();
+        $this->GuiaExport =  new GuiaExport();
     }    
 
     function setSucursal($Sucursal) {

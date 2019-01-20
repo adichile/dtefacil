@@ -111,7 +111,7 @@ class Detalle{
     }
 
     function setInfoTicket() {
-        $this->InfoTicket = new InfoTicket;
+        $this->InfoTicket = new InfoTicket();
     }
 
     function setDscItem($DscItem) {

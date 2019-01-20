@@ -52,7 +52,7 @@ class Encabezado{
     }
 
     function setIdDoc() {
-        $this->IdDoc = new \DTE_SERIALIZACION\IdDoc();
+        $this->IdDoc = new IdDoc();
     }
 
     function setEmisor() {
@@ -64,7 +64,7 @@ class Encabezado{
     }
 
     function setReceptor() {
-        $this->Receptor = new \DTE_SERIALIZACION\Receptor();
+        $this->Receptor = new Receptor();
     }
 
     function setRUTSolicita($RUTSolicita) {
@@ -72,15 +72,15 @@ class Encabezado{
     }    
 
     function setTransporte() {
-        $this->Transporte = new \DTE_SERIALIZACION\Transporte();
+        $this->Transporte = new Transporte();
     }
 
     function setTotales() {
-        $this->Totales = new \DTE_SERIALIZACION\Totales();
+        $this->Totales = new Totales();
     }
     
     function setOtraMoneda(){
-        $this->OtraMoneda = new \DTE_SERIALIZACION\OtraMoneda();
+        $this->OtraMoneda = new OtraMoneda();
     }
     
 }

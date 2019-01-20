@@ -1,5 +1,5 @@
 <?php
-namespace DTE_SERIALIZACION;
+namespace ADICHILE\DTEFACIL\SII\DTE;
 
 class TipoBultos{
 

@@ -1,5 +1,6 @@
 <?php
 namespace ADICHILE\DTEFACIL\SII\BOLETAS\DTE;
+
 class SubTotInfo{
     private $NroSTI;
     private $GlosaSTI; 

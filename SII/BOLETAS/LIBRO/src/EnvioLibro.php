@@ -34,15 +34,15 @@ class EnvioLibro{
     }
 
     function setCaratula() {
-        $this->Caratula = new Caratula;
+        $this->Caratula = new Caratula();
     }
 
     function setResumenSegmento() {
-        $this->ResumenSegmento = new ResumenSegmento;
+        $this->ResumenSegmento = new ResumenSegmento();
     }
 
     function setResumenPeriodo() {
-        $this->ResumenPeriodo = new ResumenPeriodo;
+        $this->ResumenPeriodo = new ResumenPeriodo();
     }
 
     function setDetalle($Detalle) {

@@ -57,7 +57,7 @@ class Exportaciones{
     }
 
     function setTED() {
-        $this->TED =  new \DTE_SERIALIZACION\TED();
+        $this->TED =  new TED();
     }
 
     function setTmstFirma($TmstFirma) {

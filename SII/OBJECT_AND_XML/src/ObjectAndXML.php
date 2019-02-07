@@ -16,7 +16,7 @@ class ObjectAndXML {
         $this->xml->setIndentString("");
     }
 
-    function buildSign($toSign, $privkey) {
+    public static function buildSign($toSign, $privkey) {
 
         $signature = null;
         $priv_key = $privkey;

@@ -23,7 +23,6 @@ class Emisor{
     public $CiudadOrigen;
     public $CdgVendedor;
     public $IdAdicEmisor;
-    public $RUTMandante;
     
     function getCdgTraslado() {
         return $this->CdgTraslado;
@@ -37,10 +36,6 @@ class Emisor{
         return $this->FchAut;
     }
 
-    function getRUTMandante() {
-        return $this->RUTMandante;
-    }
-
     function setCdgTraslado($CdgTraslado) {
         $this->CdgTraslado = $CdgTraslado;
     }
@@ -51,10 +46,6 @@ class Emisor{
 
     function setFchAut($FchAut) {
         $this->FchAut = $FchAut;
-    }
-
-    function setRUTMandante($RUTMandante) {
-        $this->RUTMandante = $RUTMandante;
     }
 
     function getRUTEmisor() {

@@ -12,9 +12,9 @@ class DTE{
         return $this->Documento;
     }
 
-    function setDocumento($Documento) {
-        $this->Documento = $Documento;
-    }  
+    function setDocumento() {
+        $this->Documento = new Documento();
+    }
 
     function getExportaciones(){
     	return $this->Exportaciones;

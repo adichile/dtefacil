@@ -45,33 +45,35 @@ try{
     $obj->setStartElement( 2);
     $obj->setId($IDDTE);
 
-
+    
+    /**** REPETIR POR CADA DETALLE ****/
     //Aquí podria estar dentro de un foreach con los datos de detalle
-
-    $Documento->setDetalle();
+    $detalle = new \ADICHILE\DTEFACIL\SII\BOLETAS\DTE\Detalle();
     //las variables se deben pasar todas como string ejemplo:
     //"".$itemsXML->PrcItem.""
 
-    $Documento->getDetalle()[0]->setNroLinDet("1");
-    $Documento->getDetalle()[0]->setNmbItem("ITEM");
-    $Documento->getDetalle()[0]->setQtyItem("1");
-    //$Documento->getDetalle()[0]->setUnmdItem("$itemsXML->UnmdItem");
+    $detalle->setNroLinDet("1");
+    $detalle->setNmbItem("ITEM");
+    $detalle->setQtyItem("1");
+    //$detalle->setUnmdItem("$itemsXML->UnmdItem");
 
-    $Documento->getDetalle()[0]->setCdgItem();
-    $Documento->getDetalle()[0]->getCdgItem()->setTpoCodigo("INTERNO");
-    $Documento->getDetalle()[0]->getCdgItem()->setVlrCodigo("CVLS1");
+    $detalle->setCdgItem();
+    $detalle->getCdgItem()->setTpoCodigo("INTERNO");
+    $detalle->getCdgItem()->setVlrCodigo("CVLS1");
 
-    //$Documento->getDetalle()[0]->setDscItem("0");
+    //$detalle->setDscItem("0");
 
-    $Documento->getDetalle()[0]->setPrcItem("20000");
+    $detalle->setPrcItem("20000");
     /*
      * Este campo solo va si es un item exento
-     * $Documento->getDetalle()[0]->setIndExe("1");
+     * $detalle->setIndExe("1");
      *
      *
      */
+    $detalle->setMontoItem("20000");
+    $Documento->setDetalle($detalle);
 
-    $Documento->getDetalle()[0]->setMontoItem("20000");
+    /**** REPETIR POR CADA DETALLE ****/
 
     $timezone = new \DateTimeZone('America/Santiago');
     $date = new \DateTime('', $timezone);

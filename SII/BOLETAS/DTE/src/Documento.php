@@ -49,8 +49,8 @@ class Documento{
         $this->Encabezado = new Encabezado();
     }
 
-    function setDetalle() {
-        $this->Detalle[] = new Detalle();
+    function setDetalle($Detalle) {
+        $this->Detalle[] = $Detalle;
     }
     
     function setSubTotInfo($SubTotInfo) {

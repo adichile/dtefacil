@@ -2,16 +2,16 @@
 namespace ADICHILE\DTEFACIL\SII\BOLETAS\DTE;
 
 class Receptor{
-    private $RUTRecep;
-    private $CdgIntRecep;
-    private $RznSocRecep;
-    private $Contacto;
-    private $DirRecep;
-    private $CmnaRecep;
-    private $CiudadRecep;
-    private $DirPostal;
-    private $CmnaPostal;
-    private $CiudadPostal;
+    public $RUTRecep;
+    public $CdgIntRecep;
+    public $RznSocRecep;
+    public $Contacto;
+    public $DirRecep;
+    public $CmnaRecep;
+    public $CiudadRecep;
+    public $DirPostal;
+    public $CmnaPostal;
+    public $CiudadPostal;
     
     function getRUTRecep() {
         return $this->RUTRecep;

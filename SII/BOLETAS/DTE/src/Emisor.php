@@ -1,13 +1,13 @@
 <?php
 namespace ADICHILE\DTEFACIL\SII\BOLETAS\DTE;
 class Emisor{
-    private $RUTEmisor;
-    private $RznSocEmisor;
-    private $GiroEmisor;
-    private $CdgSIISucur;
-    private $DirOrigen;
-    private $CmnaOrigen;
-    private $CiudadOrigen;
+    public $RUTEmisor;
+    public $RznSocEmisor;
+    public $GiroEmisor;
+    public $CdgSIISucur;
+    public $DirOrigen;
+    public $CmnaOrigen;
+    public $CiudadOrigen;
     
     function getRUTEmisor() {
         return $this->RUTEmisor;

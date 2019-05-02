@@ -4,7 +4,7 @@ namespace ADICHILE\DTEFACIL\SII\BOLETAS\DTE;
  * @property DD $DD
 */
 class TED{
-    private $DD;
+    public $DD;
     
     function getDD() {
         return $this->DD;

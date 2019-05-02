@@ -2,11 +2,11 @@
 namespace ADICHILE\DTEFACIL\SII\BOLETAS\DTE;
 
 class Referencia{
-    private $NroLinRef;
-    private $CodRef; 
-    private $RazonRef;
-    private $CodVndor;
-    private $CodCaja;
+    public $NroLinRef;
+    public $CodRef;
+    public $RazonRef;
+    public $CodVndor;
+    public $CodCaja;
     
     function getNroLinRef() {
         return $this->NroLinRef;

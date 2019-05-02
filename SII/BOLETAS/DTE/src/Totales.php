@@ -4,14 +4,14 @@ namespace ADICHILE\DTEFACIL\SII\BOLETAS\DTE;
  * @property ImptoReten[] $ImptoReten
 */
 class Totales{
-    private $MntNeto;
-    private $MntExe;
-    private $IVA;
-    private $MntTotal;
-    private $MontoNF;
-    private $TotalPeriodo;
-    private $SaldoAnterior;
-    private $VlrPagar;
+    public $MntNeto;
+    public $MntExe;
+    public $IVA;
+    public $MntTotal;
+    public $MontoNF;
+    public $TotalPeriodo;
+    public $SaldoAnterior;
+    public $VlrPagar;
 
     function getMntNeto() {
         return $this->MntNeto;

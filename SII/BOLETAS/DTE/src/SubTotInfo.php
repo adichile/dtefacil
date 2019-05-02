@@ -2,15 +2,15 @@
 namespace ADICHILE\DTEFACIL\SII\BOLETAS\DTE;
 
 class SubTotInfo{
-    private $NroSTI;
-    private $GlosaSTI; 
-    private $OrdenSTI;
-    private $SubTotNetoSTI;
-    private $SubTotIVASTI;
-    private $SubTotAdicSTI;
-    private $SubTotExeSTI;
-    private $ValSubtotSTI;
-    private $LineasDeta;
+    public $NroSTI;
+    public $GlosaSTI;
+    public $OrdenSTI;
+    public $SubTotNetoSTI;
+    public $SubTotIVASTI;
+    public $SubTotAdicSTI;
+    public $SubTotExeSTI;
+    public $ValSubtotSTI;
+    public $LineasDeta;
     
     function getNroSTI() {
         return $this->NroSTI;

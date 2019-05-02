@@ -1,8 +1,8 @@
 <?php
 namespace ADICHILE\DTEFACIL\SII\BOLETAS\DTE;
 class CdgItem{
-    private $TpoCodigo;
-    private $VlrCodigo;
+    public $TpoCodigo;
+    public $VlrCodigo;
     
     public function CdgItem($TpoCodigo = "", $VlrCodigo = ""){
         $this->setTpoCodigo($TpoCodigo);

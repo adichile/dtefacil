@@ -9,13 +9,13 @@ namespace ADICHILE\DTEFACIL\SII\BOLETAS\DTE;
  * @property TED $TED  
 */
 class Documento{
-    private $Encabezado;
-    private $Detalle;
-    private $SubTotInfo;
-    private $DscRcgGlobal;
-    private $Referencia;
-    private $TED;
-    private $TmstFirma;
+    public $Encabezado;
+    public $Detalle;
+    public $SubTotInfo;
+    public $DscRcgGlobal;
+    public $Referencia;
+    public $TED;
+    public $TmstFirma;
     
     function getEncabezado() {
         return $this->Encabezado;

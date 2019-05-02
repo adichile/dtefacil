@@ -5,7 +5,7 @@ namespace ADICHILE\DTEFACIL\SII\BOLETAS\DTE;
  * @property Documento $Documento Esta propiedad referencia a la clase Documento
 */
 class DTE{
-    private $Documento;
+    public $Documento;
     
     function getDocumento() {
         return $this->Documento;

@@ -2,12 +2,12 @@
     "name": "adichile/dtefacil",
     "description": "Libreria php relacionada a factura electronica chile",
     "type": "library",
-    "license": "AGPL-3.0+",
+    "license": "MIT",
     "authors": [
         {
             "name": "ADICHILE SpA",
-            "email": "joaquin.gamboa@adichilespa.cl",
-            "homepage": "http://www.adichilespa.cl"
+            "email": "joaquin.gamboa@dsmgroup.cl",
+            "homepage": "https://dsmchile.com"
         }
     ],
     "minimum-stability": "dev",

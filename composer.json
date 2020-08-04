@@ -1,5 +1,6 @@
 {
     "name": "adichile/dtefacil",
+    "version": "1.0.0",
     "description": "Libreria php relacionada a factura electronica chile",
     "type": "library",
     "license": "MIT",
